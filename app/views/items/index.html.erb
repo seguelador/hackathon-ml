@@ -1,0 +1,166 @@
+
+
+
+<div id="wrapper">
+
+
+    <div class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 page-sidebar">
+                    <aside>
+                        <div class="inner-box">
+                            <div class="user-panel-sidebar">
+                                <div class="collapse-box">
+                                    <h5 class="collapse-title no-border"> My Classified <a class="pull-right"
+                                                                                           data-toggle="collapse"
+                                                                                           href="#MyClassified"><i
+                                            class="fa fa-angle-down"></i></a></h5>
+
+                                    <div id="MyClassified" class="panel-collapse collapse in">
+                                        <ul class="acc-list">
+                                            <li><a href="account-home.html"><i class="icon-home"></i> Personal Home </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /.collapse-box  -->
+                                <div class="collapse-box">
+                                    <h5 class="collapse-title"> My Ads <a class="pull-right" data-toggle="collapse"
+                                                                          href="#MyAds"><i class="fa fa-angle-down"></i></a>
+                                    </h5>
+
+                                    <div id="MyAds" class="panel-collapse collapse in">
+                                        <ul class="acc-list">
+                                            <li class="active"><a href="account-myads.html"><i class="icon-docs"></i> My
+                                                ads <span class="badge">42</span> </a></li>
+                                            <li><a href="account-favourite-ads.html"><i class="icon-heart"></i>
+                                                Favourite ads <span class="badge">42</span> </a></li>
+                                            <li><a href="account-saved-search.html"><i class="icon-star-circled"></i>
+                                                Saved search <span class="badge">42</span> </a></li>
+                                            <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i>
+                                                Archived ads <span class="badge">42</span></a></li>
+                                            <li><a href="account-pending-approval-ads.html"><i
+                                                    class="icon-hourglass"></i> Pending approval <span
+                                                    class="badge">42</span></a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- /.collapse-box  -->
+                                <div class="collapse-box">
+                                    <h5 class="collapse-title"> Terminate Account <a class="pull-right"
+                                                                                     data-toggle="collapse"
+                                                                                     href="#TerminateAccount"><i
+                                            class="fa fa-angle-down"></i></a></h5>
+
+                                    <div id="TerminateAccount" class="panel-collapse collapse in">
+                                        <ul class="acc-list">
+                                            <li><a href="account-close.html"><i class="icon-cancel-circled "></i> Close
+                                                account </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /.collapse-box  -->
+                            </div>
+                        </div>
+                        <!-- /.inner-box  -->
+
+                    </aside>
+                </div>
+                <!--/.page-sidebar-->
+
+                <div class="col-sm-9 page-content">
+                    <div class="inner-box">
+                        <h2 class="title-2"><i class="icon-docs"></i> My Ads </h2>
+
+                        <div class="table-responsive">
+                            <div class="table-action">
+                                <%= link_to 'Nuevo Item', new_item_path, class: 'btn btn-primary' %>
+                            </div>
+                            <table id="addManageTable"
+                                   class="table table-striped table-bordered add-manage-table table demo"
+                                   data-filter="#filter" data-filter-text-only="true">
+                                <thead>
+                                <tr>
+                                    <th data-type="numeric" data-sort-initial="true"></th>
+                                    
+                                    <th data-sort-ignore="true"> Detalle del item</th>
+                                    <th data-type="numeric"> Precio</th>
+                                    <th> Opciones</th>
+                                    <th> Compartir</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% @items.each do |item| %>
+                                
+                                    <td style="width:2%" class="add-img-selector">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    
+                                    <td style="width:58%" class="ads-details-td">
+                                        <div>
+                                            <p><strong> <a href="ads-details.html" title="I pod 16 gb"><%= link_to item.title, item %></a>
+                                            </strong></p>
+
+                                            <p><strong> Subtitulo: </strong><%= item.subtitle %></p>
+
+                                            
+                                        </div>
+                                    </td>
+                                    <td style="width:16%" class="price-td">
+                                        <div><strong>$<%=item.price%></strong></div>
+                                    </td>
+                                    <td style="width:10%" class="action-td">
+                                        <div>
+                                              <%= link_to edit_item_path(item), class: "btn btn-primary btn-xs" do %>
+                                                <i class="fa fa-edit"></i> Edit
+                                              <%end%>
+                                            </p>
+                                          
+                                            <p><%= link_to item, class: "btn btn-danger btn-xs",method: :delete, data: { confirm: '¿Estas Seguro?' } do %>
+                                              <i class=" fa fa-trash"></i> Delete
+                                            <%end%></p>
+                                        </div>
+                                    </td>
+                                    <td style="width:14%" class="add-img-td">
+                                      <%= link_to edit_item_path(item), class: "btn btn-primary btn-xs" do %>
+                                                <i class="fa fa-edit"></i> Facebook
+                                              <%end%>
+                                            </p>
+                                          
+                                            <p><%= link_to item, class: "btn btn-warning btn-xs",method: :delete, data: { confirm: '¿Estas Seguro?' } do %>
+                                              <i class=" fa fa-trash"></i> M.LIBRE
+                                            <%end%></p>
+                                            <p><%= link_to item, class: "btn btn-warning btn-xs",method: :delete, data: { confirm: '¿Estas Seguro?' } do %>
+                                              <i class=" fa fa-trash"></i> Instagram
+                                            <%end%></p>
+                                    </td>
+                                  </tr>
+                                <% end %>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--/.row-box End-->
+
+                    </div>
+                </div>
+                <!--/.page-content-->
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!-- /.main-container -->
+
+</div>
+<!-- /.wrapper -->
+
+
