@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @item.title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @item.subtitle %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category_id %>
+</p>
+
+<p>
+  <strong>Initial quantity:</strong>
+  <%= @item.initial_quantity %>
+</p>
+
+<p>
+  <strong>Available quantity:</strong>
+  <%= @item.available_quantity %>
+</p>
+
+<p>
+  <strong>Sold quantity:</strong>
+  <%= @item.sold_quantity %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @item.price %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @item.condition %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

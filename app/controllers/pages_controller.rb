@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :set_api
+
   def index
   end
 
@@ -22,4 +24,14 @@ class PagesController < ApplicationController
 
   def faq
   end
+
+  def post_ads
+  end
+
+  private
+    def set_api
+      if @@api.present? 
+        @api = @@api
+      end
+    end
 end

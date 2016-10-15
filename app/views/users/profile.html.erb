@@ -1,0 +1,130 @@
+<div class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 page-sidebar">
+        <aside>
+          <div class="inner-box">
+            <div class="user-panel-sidebar">
+              <div class="collapse-box">
+                <h5 class="collapse-title no-border"> Mis Datos</h5>
+
+                <div class="panel-collapse collapse in" id="MyClassified">
+                  <ul class="acc-list">
+                    <li><a class="active" href="account-home.html"><i class="icon-home"></i>
+                      Información Personal </a></li>
+
+                    </ul>
+                  </div>
+                </div>
+                <!-- /.collapse-box  -->
+                <div class="collapse-box">
+                  <h5 class="collapse-title"> Mis Publicaciones</h5>
+
+                  <div class="panel-collapse collapse in" id="MyAds">
+                    <ul class="acc-list">
+                      <li><a href="account-myads.html"><i class="icon-docs"></i> Activos <span
+                        class="badge">42</span> </a></li>
+                        <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i>
+                          Guardados <span class="badge">42</span></a></li>
+                          <li><a href="account-pending-approval-ads.html"><i
+                            class="icon-hourglass"></i> No Activos <span
+                            class="badge">42</span></a></li>
+
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- /.collapse-box  -->
+                    </div>
+                  </div>
+                  <!-- /.inner-box  -->
+
+                </aside>
+              </div>
+              <!--/.page-sidebar-->
+
+              <div class="col-sm-9 page-content">
+
+                <div class="inner-box">
+                  <div class="welcome-msg">
+                  <% if user_signed_in? %>
+                  <a href="javascript:;" class="btn btn-primary" style="background-color: #3b5998"><i class="fa fa-facebook-official"></i> CONECTADO</a>
+                  <% else %>
+                  <a href="<%= user_facebook_omniauth_authorize_path %>" class="btn btn-primary" style="background-color: #3b5998"><i class="fa fa-facebook-official"></i> CONECTAR FACEBOOK</a>
+                  <% end %>
+                  <a href="#" class="btn btn-primary" style="background-color: #e1306c"><i class="fa fa-instagram"></i> CONECTAR INSTAGRAM</a>
+                  </div>
+                  <div id="accordion" class="panel-group">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#collapseB1" data-toggle="collapse"> Información </a></h4>
+                      </div>
+                      <div class="panel-collapse collapse in" id="collapseB1">
+                        <div class="panel-body">
+                          <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Nombre</label>
+
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="Nombre">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Email</label>
+
+                              <div class="col-sm-9">
+                                <input type="email" class="form-control"
+                                placeholder="ejemplo@mail.com">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="Phone" class="col-sm-3 control-label">Teléfono</label>
+
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control" id="phone"
+                                placeholder="+56912345678">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-default">Guardar</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#collapseB3" data-toggle="collapse">
+                          Preferencias </a></h4>
+                        </div>
+                        <div class="panel-collapse collapse" id="collapseB3">
+                          <div class="panel-body">
+                            <div class="form-group">
+                              <div class="col-sm-12">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox">
+                                    I want to receive newsletter. </label>
+                                  </div>
+                                  <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox">
+                                      I want to receive advice on buying and selling. </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--/.row-box End-->
+
+                      </div>
+                    </div>
+                    <!--/.page-content-->
+                  </div>
+                  <!--/.row-->
+                </div>
+                <!--/.container-->
+              </div>
