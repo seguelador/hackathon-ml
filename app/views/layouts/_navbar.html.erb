@@ -12,7 +12,7 @@
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<% if @api.get_my_user.email %>
+							<% if @api && @api.get_my_user.email %>
 								<li><%= link_to @api.get_my_user.email %></li>
 							<% else %>
 								<li><%= link_to 'Iniciar Sesión', @api.authenticate_url %></li>
