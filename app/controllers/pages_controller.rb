@@ -25,4 +25,7 @@ class PagesController < ApplicationController
 
   def faq
   end
+
+  def post_ads
+  end
 end
