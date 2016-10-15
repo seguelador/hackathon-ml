@@ -33,6 +33,10 @@ gem 'mercadolibre'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'devise'
+gem "omniauth"
+gem "omniauth-facebook"
+gem 'koala'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
