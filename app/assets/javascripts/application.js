@@ -13,4 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require pace.min
+//= require bootstrap
+//= require owl.carousel.min
+//= require jquery.matchHeight-min
+//= require jquery.bxslider
+//= require form-validation
+//= require jquery.fs.scroller
+//= require jquery.fs.selecter
+//= require hideMaxListItems
+//= require script
