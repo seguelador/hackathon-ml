@@ -11,10 +11,12 @@
 						<span>VENDE</span>FÁCIL </a>
 					</div>
 					<div class="navbar-collapse collapse">
-
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="login.html">Iniciar Sesión</a></li>
-							<li><a href="signup.html">Cerrar Sesión</a></li>
+							<% if @api.get_my_user.email %>
+								<li><%= link_to @api.get_my_user.email %></li>
+							<% else %>
+								<li><%= link_to 'Iniciar Sesión', @api.authenticate_url %></li>
+							<% end %>
 							<li class="postadd">
 								<a class="btn btn-block   btn-border btn-post btn-danger" href="post-ads.html">Publica Fácil!</a>
 							</li>
