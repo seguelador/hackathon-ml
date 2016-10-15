@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :set_api
   def profile
+  	
   end
 
   def update
