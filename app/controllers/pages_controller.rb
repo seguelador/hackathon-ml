@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def index
+    if @@api.present? 
+      @api = @@api
+    end
   end
 
   def result
@@ -21,5 +24,8 @@ class PagesController < ApplicationController
   end
 
   def faq
+  end
+
+  def post_ads
   end
 end
