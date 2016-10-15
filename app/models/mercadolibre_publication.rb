@@ -5,28 +5,23 @@ module Mercadolibre
     def initialize
       self.body = default_publication_json()
     end
-
-    def self.create_publication(json)
-      if @@api.present?
-        @api = @@api
-        @api.create_item(json)
-      end
-    end
   
     private
       def default_publication_json
         return {
+          "accepts_mercadopago":true,
           "title":"Item de test - No Ofertar",
-          "category_id":"MLA3530",
+          "category_id":"MLC1430",
           "price":10,
-          "currency_id":"ARS",
+          "subtitle":"prueba",
+          "currency_id":"CLP",
           "available_quantity":1,
           "buying_mode":"buy_it_now",
           "listing_type_id":"gold_special",
           "condition":"new",
-          "description": "Item de test - No Ofertar",
-          "video_id": "YOUTUBE_ID_HERE",
-          "warranty": "12 months",
+          "description":"Item de test - No Ofertar",
+          "video_id":"k68MW1iHfno",
+          "warranty":"12 months",
           "pictures":[
           {"source":"http://mla-s2-p.mlstatic.com/968521-MLA20805195516_072016-O.jpg"}
           ]

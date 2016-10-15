@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  require 'mercadolibre_publication'
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -9,11 +10,12 @@ class ApplicationController < ActionController::Base
 
   private
     def mercadolibre
-      #binding.pry
-      if @@api.present? && !@@api.access_token.present?
-        # auth_data (access_token, refresh_token, expired_at)
-        @@auth_data = @@api.authenticate(params[:code])
-      else
+      if @@api.present? 
+        unless @@api.access_token.present?
+          # auth_data (access_token, refresh_token, expired_at)
+          @@auth_data = @@api.authenticate(params[:code])
+        end
+      elsif @@api.blank?
         @@api = Mercadolibre::Api.new({
           app_key: '1750802386298036',
           app_secret: '7BSn4krZe6bJiRLH3MSqNaVQYQygcBl9',

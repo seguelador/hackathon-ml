@@ -2,6 +2,11 @@ class PagesController < ApplicationController
   before_action :set_api
 
   def index
+    publication = Mercadolibre::Publication.new
+    if @api.item_valid?(publication.body)
+      response = @api.create_item(publication.body)
+    end
+    binding.pry
   end
 
   def result
