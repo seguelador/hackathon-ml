@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def index
+    if @@api.present? 
+      @api = @@api
+    end
   end
 
   def result
