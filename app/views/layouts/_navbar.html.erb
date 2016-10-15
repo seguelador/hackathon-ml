@@ -13,9 +13,9 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<% if @api && @api.get_my_user.email %>
-								<li><%= link_to @api.get_my_user.email %></li>
+								<li><%= link_to @api.get_my_user.email, users_profile_path %></li>
 							<% else %>
-								<li><%= link_to 'Iniciar Sesión', @api.authenticate_url.gsub!(".ar","") %></li>
+								<li><%= link_to 'Iniciar Sesión', @api.try(:authenticate_url) %></li>
 							<% end %>
 							<li class="postadd">
 								<%= link_to 'Publica Fácil!', pages_post_ads_path ,class: 'btn btn-block btn-border btn-post btn-danger' %>

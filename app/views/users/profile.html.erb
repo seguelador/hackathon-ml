@@ -46,8 +46,12 @@
 
                 <div class="inner-box">
                   <div class="welcome-msg">
-                  <a href="<%= user_facebook_omniauth_authorize_path %>" class="btn btn-primary" style="background-color: #3b5998">Conectar Facebook</a>
-                  <a href="#" class="btn btn-primary" style="background-color: #e1306c">Conectar Instagram</a>
+                  <% if user_signed_in? %>
+                  <a href="javascript:;" class="btn btn-primary" style="background-color: #3b5998"><i class="fa fa-facebook-official"></i> CONECTADO</a>
+                  <% else %>
+                  <a href="<%= user_facebook_omniauth_authorize_path %>" class="btn btn-primary" style="background-color: #3b5998"><i class="fa fa-facebook-official"></i> CONECTAR FACEBOOK</a>
+                  <% end %>
+                  <a href="#" class="btn btn-primary" style="background-color: #e1306c"><i class="fa fa-instagram"></i> CONECTAR INSTAGRAM</a>
                   </div>
                   <div id="accordion" class="panel-group">
                     <div class="panel panel-default">

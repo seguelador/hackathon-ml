@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20161015130753) do
     t.string   "uid"
     t.string   "provider"
     t.string   "name"
+    t.string   "oauth_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

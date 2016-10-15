@@ -37,7 +37,8 @@ gem 'httparty'
 gem 'devise'
 gem "omniauth"
 gem "omniauth-facebook"
-gem 'koala'
+gem "koala", "~> 2.2"
+gem 'fb_graph'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -13,8 +13,13 @@ class User < ActiveRecord::Base
    return user if user
    User.create(
    	name: auth.extra.raw_info.name,
+    oauth_token: auth.credentials.token,
    	provider: auth.provider, uid: auth.uid,
    	email: auth.info.email,
    	password: Devise.friendly_token[0,20])
+ end
+
+ def facebook
+  @facebook ||= Koala::Facebook::Api.new(oauth_token)
  end
 end
